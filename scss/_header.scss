@@ -1,0 +1,185 @@
+.header {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/hero-image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    
+   
+}
+    
+    
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 7rem;
+    margin-bottom: 20vh;
+    width: 100%;
+    position: relative;
+
+    &__logo {
+        height: 5rem;
+    }
+
+    &__list {
+        list-style: none;
+        font-size: 1.7rem;
+
+        display: flex;
+
+        @media only screen and(max-width: $bp-medium) {
+            position: absolute;
+            right: 0rem;
+            height: 100vh;
+            top: 0vh;
+            background: $color-primary;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform .5s ease-in;
+            font-size: 3rem;
+        }
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-right: 0rem;
+        }
+    }
+
+    &__item {
+        @media only screen and (max-width: $bp-medium) {
+            opacity: 0;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width .2s;
+    }
+
+    &__link:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+
+    &__active {
+        transform: translateX(0%);
+    }
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+    @media only screen and(max-width: $bp-medium) {
+        display: block;
+        z-index: 3;
+    }
+}
+
+.burger div{
+    width: 3.2rem;
+    height: 0.4rem;
+    background-color: #fff;
+    margin: .5rem;
+    transition: all 0.3s ease;
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 0 6rem;
+    text-align: center;
+
+   &__title {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+   }
+
+   &__paragraph {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+   }
+
+   &__btn-box {
+       display: flex;
+   }
+
+   &__btn:link,
+   &__btn:visited {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: .5rem 3.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+    transition: all .2s;
+    display: inline-block;
+    margin: 0 1.5rem;
+    border: solid 2px #fff;
+    color: #fff;
+
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+
+        }
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+

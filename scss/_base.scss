@@ -1,0 +1,49 @@
+/////COLOR VARIABLES
+$color-primary: #387885;
+$color-grey-primary: rgb(17, 17, 17);
+$color-grey-secundary: #777;
+
+//////FONT VARIABLES
+$font-primary: 'Nunito Sans', sans-serif;
+$font-secundary: 'Bitter', sans-serif;
+$font-handwriting: 'Dancing Script', cursive;
+
+/////MEDIA QUERIES
+$bp-largest: 69.37em; /////1100px/16px = 69.37em
+$bp-large: 56.25em; //////900px/16px = 56.25em
+$bp-medium: 37.5em; /////600px/16px = 37.5em
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /////10px/16px = 62.5%
+    scroll-behavior: smooth;
+
+    @media only screen and(max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-secundary;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: repeat(2, 100vh) repeat(4, min-content);
+    
+    @media only screen and(max-width: $bp-large) {
+        grid-template-rows: 100vh repeat(7, min-content);
+    }
+}
+

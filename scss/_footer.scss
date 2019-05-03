@@ -1,0 +1,26 @@
+.footer {
+    background-color: $color-primary;
+    grid-column: full-start / full-end;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__logo {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    &__nav li{
+        list-style: none;
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-decoration: none;
+        
+    }
+}
